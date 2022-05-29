@@ -5,20 +5,20 @@
 class Alternator < Formula
   desc "alternator"
   homepage "https://github.com/kota65535/alternator"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.0/alternator_darwin_arm64.tar.gz"
-      sha256 "2816a6915f26f61c2b947ad716c9a3211b36619a7cf14dac5a3c004e6d304120"
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.1/alternator_darwin_arm64.tar.gz"
+      sha256 "46799d0cc1b49ba985d092ce43f2f6a541a882aeb748377ef072c5c5441d2ede"
 
       def install
         bin.install "alternator"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.0/alternator_darwin_x86_64.tar.gz"
-      sha256 "379bd8c48214367b19bd89742cddf8e91e95c2318fd829df1aa3c8d49db3a110"
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.1/alternator_darwin_x86_64.tar.gz"
+      sha256 "d1592cc0abf2dff48472926339032e912f5a94e2399e6bce0b3e0a7ee0edb09e"
 
       def install
         bin.install "alternator"
@@ -27,17 +27,17 @@ class Alternator < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.0/alternator_linux_x86_64.tar.gz"
-      sha256 "7dfcbea24ba17585443e9c55dbe72d88daa066f13ba3dab80dd1b36bcb25671b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.1/alternator_linux_arm64.tar.gz"
+      sha256 "f3b195800ee289e5a7345add555f1aec7634c123b20c188cbc449340192e4d91"
 
       def install
         bin.install "alternator"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.0/alternator_linux_arm64.tar.gz"
-      sha256 "343354e9090081e966759db034ba884bcff2486b019a4e202121b05495b3c76c"
+    if Hardware::CPU.intel?
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.1/alternator_linux_x86_64.tar.gz"
+      sha256 "a71de796a04e934121b18b6464a7596a10061c1b4c4ee1be9d475bf76eb77e46"
 
       def install
         bin.install "alternator"
