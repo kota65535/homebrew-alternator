@@ -5,20 +5,20 @@
 class Alternator < Formula
   desc "alternator"
   homepage "https://github.com/kota65535/alternator"
-  version "0.1.9"
+  version "0.1.10"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.9/alternator_darwin_x86_64.tar.gz"
-      sha256 "92da893e983dd32d59778cf6178173046d5753cc24b64009a19c1965850c7cfc"
+    if Hardware::CPU.arm?
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.10/alternator_darwin_arm64.tar.gz"
+      sha256 "f03b235c3b20b23251c4ee53a08a67a82519afc3e236ab463702b65fc4fce767"
 
       def install
         bin.install "alternator"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.9/alternator_darwin_arm64.tar.gz"
-      sha256 "9da85548f786e036d70e8e9c1dfb4b4766a0e70fbcb9a989b90834fbb727f54f"
+    if Hardware::CPU.intel?
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.10/alternator_darwin_x86_64.tar.gz"
+      sha256 "c9cdd82455dc916bb3463c62a3b8d5001eef09c69128028164f39331896211ca"
 
       def install
         bin.install "alternator"
@@ -28,24 +28,24 @@ class Alternator < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.9/alternator_linux_armv6.tar.gz"
-      sha256 "b073df34c0c8e10be3aa597cd4feae752fa9819821edb787bd2cfd78de5bd58d"
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.10/alternator_linux_armv6.tar.gz"
+      sha256 "6be596ab360d84a72959651c3d71a225441b65b8a436d6696133e729d9d6c829"
 
       def install
         bin.install "alternator"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.9/alternator_linux_arm64.tar.gz"
-      sha256 "7685ce2f2a20ea05f4ba31a972e0b3f5dea40d5ede496424a0ff604593480d12"
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.10/alternator_linux_arm64.tar.gz"
+      sha256 "0935c8440fd34b2374f4dd4cec79329ca64861db9dd6b9855ece8c5f27cf07d5"
 
       def install
         bin.install "alternator"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kota65535/alternator/releases/download/v0.1.9/alternator_linux_x86_64.tar.gz"
-      sha256 "218c041a500aa8b327ce3415261ce77349636286585532645128333f3abc3dcf"
+      url "https://github.com/kota65535/alternator/releases/download/v0.1.10/alternator_linux_x86_64.tar.gz"
+      sha256 "542c452895703ab01612196c5b993588e4dd499f005b7a9ac2157321eaef6be8"
 
       def install
         bin.install "alternator"
